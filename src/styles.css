@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: EncodeSansSemiExpanded-Regular;
+  src: url(/assets/fonts/Encode_Sans_Semi_Condensed/EncodeSansSemiCondensed-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Lato-Regular, sans-serif;
+  list-style: none;
+  text-decoration: none !important;
+  min-width: 0;
+  font-family: EncodeSansSemiExpanded-Regular, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--body-color);
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

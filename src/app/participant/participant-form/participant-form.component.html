@@ -1,0 +1,83 @@
+<section>
+  <h2>Remplissez le formulaire ci-dessous</h2>
+  <p>Les champs marqués d'un <span>*</span> sont obligatoires</p>
+  <form [formGroup]="participantForm" (ngSubmit)="handleSubmit()">
+    <div>
+      <select
+        class="input-style"
+        name="pets"
+        id="pet-select"
+        formControlName="civilite"
+      >
+        <option value="" disabled>--Civilité--</option>
+        <option value="Mr">Mr</option>
+        <option value="Mme">Mme</option>
+        <option value="Dr">Dr</option>
+      </select>
+    </div>
+
+    <div class="ang-grid-02">
+      <div>
+        <input
+          placeholder="Nom"
+          class="input-style full-width"
+          type="text"
+          formControlName="nom"
+        />
+      </div>
+      <div>
+        <input
+          placeholder="Prenom"
+          class="input-style full-width"
+          type="text"
+          formControlName="prenom"
+        />
+      </div>
+    </div>
+    <div class="ang-grid-02">
+      <div>
+        <input
+          placeholder="Bobo-Dioulasso"
+          class="input-style full-width"
+          type="text"
+          formControlName="ville"
+        />
+      </div>
+      <div>
+        <input
+          placeholder="exemple@gmail.com"
+          class="input-style full-width"
+          type="email"
+          formControlName="email"
+        />
+      </div>
+    </div>
+
+    <div class="full-width hbc-margin-bck">
+      <select
+        class="input-style full-width"
+        name="pets"
+        id="pet-select"
+        formControlName="type"
+      >
+        <option value="" disabled>--Exposant--</option>
+        <option value="Visiteur">Visiteur</option>
+        <option value="Exposant">Exposant</option>
+        <option value="Professionnelle">Professionnelle</option>
+        <option value="Presse">Presse</option>
+      </select>
+    </div>
+
+    <div>
+      <input
+        placeholder="Telephone"
+        class="input-style full-width hbc-margin-bck"
+        type="text"
+        formControlName="telephone"
+      />
+    </div>
+    <div class="full-width">
+      <button class="hbc-btn">Enregistrer</button>
+    </div>
+  </form>
+</section>

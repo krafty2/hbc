@@ -1,0 +1,28 @@
+.hbc-theme{
+  background: url(/assets/img/bg.png);
+  color: #fff;
+  text-align: center;
+  padding:14px 0;
+  /* padding-block: 14px; */
+}
+
+h1{
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-size: clamp(1rem,3vw,2rem);
+}
+
+.hbc-connect-save{
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  gap: 4px;
+  /* padding-inline: 34px; */
+}
+
+@media only screen and (max-width: 730px) {
+.hbc-connect-save{
+  display: flex;
+  flex-direction: column-reverse;
+
+}
+}
