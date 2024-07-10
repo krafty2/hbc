@@ -1,0 +1,32 @@
+/**etiquette */
+.etiquette{
+  width: 650px;
+  border: 1px solid #c1c1c1;
+  padding: 14px;
+  border-radius: 8px;
+}
+
+.ang-flex{
+  display: flex;
+  justify-content: space-between;
+  /* gap: 114px; */
+}
+
+.ang-mg-block-start{
+  margin-block-start: 14px;
+}
+
+.ang-info p{
+  margin-block: 12px;
+  letter-spacing: 1px;
+}
+
+.pics{
+  width: 150px;
+  height: 150px;
+  border: 1px solid #c1c1c1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block: 12px;
+}

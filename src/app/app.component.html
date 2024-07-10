@@ -1,19 +1,64 @@
 <section>
-  <div>
-    <img  src="/assets/img/ohb.png" alt="logo" srcset="" />
-  </div>
-  <div class="hbc-theme">
-    <h1 class="hbc-title">Semaine Régionale de Promotion de l'Economie Numérique</h1>
-    <h1>HAUTS-BASSINS CONNECT</h1>
-    <small>Veuillez remplir le formulaire ci-dessous afin d'obtenir votre badge d'accès</small>
-  </div>
-  <section class="hbc-connect-save">
-    <div style="display: flex;align-items: center;justify-content: center;">
-      <img style="width: 350px !important;text-align: end;" src="/assets/img/affiche.jpg" alt="logo" srcset="" />
-    </div>
-    <div>
-      <app-participant-form/>
-    </div>
+  <section style="padding: 14px">
+    <h2>Generation de fichier</h2>
+
+    <button
+      style="
+        padding: 8px 14px;
+        font-size: 18px;
+        letter-spacing: 1px;
+        background: #0048bb;
+        color: #fff;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+      "
+      (click)="generateEtiquette()"
+    >
+      Imprimer
+    </button>
+    <!-- <button (click)="generatePDF()">Télécharger en PDF</button>
+    <button (click)="generatePDF6()">Telecharger de PDF 2</button> -->
+    <!-- <div id="elementToPrint">
+
+      <div>
+        <img src="/assets/img/ohb.png" alt="logo" srcset="" />
+      </div>
+      <div class="hbc-theme">
+        <h1 class="hbc-title">
+          Semaine Régionale de Promotion de l'Economie Numérique
+        </h1>
+        <h1>HAUTS-BASSINS CONNECT</h1>
+        <small
+          >Veuillez remplir le formulaire ci-dessous afin d'obtenir votre badge
+          d'accès</small
+        >
+      </div>
+      <section class="hbc-connect-save">
+        <div
+          style="display: flex; align-items: center; justify-content: center"
+        >
+          <img
+            style="width: 350px !important; text-align: end"
+            src="/assets/img/affiche.jpg"
+            alt="logo"
+            srcset=""
+          />
+        </div>
+        <div>
+          <app-participant-form />
+        </div>
+      </section>
+    </div> -->
+  </section>
+
+  <section class="ang-grid-02" id="etiquettePrint">
+    <app-etitquette />
+    <app-etitquette />
+    <app-etitquette />
+    <app-etitquette />
+    <app-etitquette />
+    <app-etitquette />
   </section>
 
   <router-outlet />

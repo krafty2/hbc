@@ -38,4 +38,9 @@ export class ParticipantFormComponent {
       }
     })
   }
+
+  isControlInvalid(controlName: string): boolean {
+    const control = this.participantForm.get(controlName);
+    return !!control?.invalid && (control.dirty || control.touched);
+  }
 }

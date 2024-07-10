@@ -26,3 +26,9 @@ h1{
 
 }
 }
+
+
+.ang-grid-02{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}

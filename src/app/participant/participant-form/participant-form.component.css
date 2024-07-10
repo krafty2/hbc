@@ -9,6 +9,14 @@ section {
   border-radius: 8px;
 }
 
+h2{
+  font-size: clamp(1.2rem,3vw,1.7rem);
+  margin-block: 12px;
+}
+
+p{
+  margin-block: 6px;
+}
 .input-style {
   padding: 8px;
   border: 1px solid #c1c1c1;
@@ -25,6 +33,10 @@ section {
 .input-style:focus {
   border-color: #007bff;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.error{
+  border-color: red;
 }
 
 .ang-grid-02 {
