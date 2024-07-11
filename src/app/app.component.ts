@@ -6,6 +6,7 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import autoTable from 'jspdf-autotable';
 import { EtitquetteComponent } from './etitquette/etitquette.component';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 
@@ -19,6 +20,9 @@ import { EtitquetteComponent } from './etitquette/etitquette.component';
 export class AppComponent {
   title = 'hbc';
 
+  pdfContent: any;
+
+  constructor(private sanitizer: DomSanitizer) {}
   generatePDF() {
     const doc = new jsPDF(
       {
@@ -41,12 +45,15 @@ export class AppComponent {
       doc.save('pdf.pdf');
     });
   }
+
+  //generation de l'etiquette
   generateEtiquette() {
+    this.pdfContent = null;
     const doc = new jsPDF(
       {
         // orientation: "landscape",
         // unit: "in",
-        format: 'a4'
+        // format: 'a4'
       }
     );
 
@@ -59,9 +66,18 @@ export class AppComponent {
       const pageHeight = (canvas.height * pageWidth) / canvas.width;
       doc.text("Hello world!", 10, 10);
       doc.addImage(imgData, 'PNG', 0, 0, pageWidth, pageHeight);
-      doc.autoPrint({ variant: 'non-conform' });
-      doc.save('pdf.pdf');
+
+      //this.pdfContent = this.sanitizer.bypassSecurityTrustResourceUrl(`data:application/pdf;base64,${btoa(doc.output())}`);
+      //doc.autoPrint({ variant: 'non-conform' });
+
+      const pdfDataUri = doc.output('datauristring');
+      this.pdfContent = this.sanitizer.bypassSecurityTrustResourceUrl(pdfDataUri);
+      //doc.save('pdf.pdf');
     });
+  }
+
+  viewPDF() {
+    this.generatePDF();
   }
 
   generatePDF2() {
@@ -235,7 +251,9 @@ export class AppComponent {
       body: data
     });
 
-    doc.save('table.pdf');
+    const pdfDataUri = doc.output('datauristring');
+      this.pdfContent = this.sanitizer.bypassSecurityTrustResourceUrl(pdfDataUri);
+    // doc.save('table.pdf');
   }
 }
 
